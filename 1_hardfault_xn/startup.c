@@ -41,8 +41,10 @@ void reset_handler(void)
 	blink_count(LED_BLUE, 20);
 
 	// execute from 0x40000000
-	??????
-
+	void (*func)(void);
+	func = 0x400000000;
+	func();
+	//void (*)(void)0x400000000;
 	blink(LED_BLUE);
 }
 
